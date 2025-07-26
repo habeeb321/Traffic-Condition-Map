@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:intl/intl.dart';
-import 'package:traffic_condition_map/model/traffic_image_model.dart';
+import 'package:traffic_condition_map/home_screen/model/traffic_image_model.dart';
 import 'package:traffic_condition_map/service/home_service.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest_all.dart' as tz;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traffic_condition_map/home_screen/home_screen.dart';
+import 'package:traffic_condition_map/home_screen/view/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

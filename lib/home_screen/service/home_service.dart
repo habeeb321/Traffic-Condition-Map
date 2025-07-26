@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:traffic_condition_map/model/traffic_image_model.dart';
+import 'package:traffic_condition_map/home_screen/model/traffic_image_model.dart';
 
 class HomeService {
   static final Dio dio = Dio();

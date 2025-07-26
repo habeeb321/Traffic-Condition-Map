@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
-import 'package:traffic_condition_map/controller/traffic_image_controller.dart';
+import 'package:traffic_condition_map/home_screen/controller/traffic_image_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
