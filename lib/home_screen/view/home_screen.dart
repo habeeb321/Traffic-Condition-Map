@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:traffic_condition_map/home_screen/model/traffic_image_model.dart';
+import 'package:traffic_condition_map/home_screen/view/widgets/camera_image_sheet.dart';
 import '../controller/traffic_image_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             onTap: () {
               showModalBottomSheet(
                 context: context,
-                builder: (_) => _CameraImageSheet(camera: camera),
+                builder: (_) => CameraImageSheet(camera: camera),
                 showDragHandle: true,
               );
             },
@@ -45,7 +45,6 @@ class HomeScreen extends StatelessWidget {
           );
         }).toList();
 
-        
         final CameraPosition initialCameraPosition = CameraPosition(
           target: LatLng(
             trafficData.items![0].cameras![0].location?.latitude ?? 1.3,
@@ -70,40 +69,6 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
       centerTitle: true,
       backgroundColor: Colors.blue,
-    );
-  }
-}
-
-class _CameraImageSheet extends StatelessWidget {
-  final Camera camera;
-
-  const _CameraImageSheet({required this.camera});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Camera ID: ${camera.cameraId ?? ""}',
-                style: const TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            if (camera.image != null)
-              Image.network(camera.image!, fit: BoxFit.cover,
-                  loadingBuilder: (context, child, progress) {
-                if (progress == null) return child;
-                return const Center(child: CircularProgressIndicator());
-              }),
-            const SizedBox(height: 12),
-            Text(
-                'Timestamp: ${camera.timestamp?.toLocal().toString() ?? "N/A"}'),
-            Text(
-                'Location: ${camera.location?.latitude}, ${camera.location?.longitude}'),
-          ],
-        ),
-      ),
     );
   }
 }
