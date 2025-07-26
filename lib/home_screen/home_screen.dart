@@ -5,8 +5,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Traffic Condition Map',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+      ),
+      body: const Center(
         child: Text('Home Screen'),
       ),
     );
